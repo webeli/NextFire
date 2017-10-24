@@ -1,7 +1,6 @@
 import SiteLayout from '../components/SiteLayout'
 
 export default () =>
-  <div>
-    <SiteLayout title="Product" />
+  <SiteLayout title="Product">
     <div>Product!</div>
-  </div>
+  </SiteLayout>
