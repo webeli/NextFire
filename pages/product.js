@@ -1,1 +1,7 @@
-export default () => <div>Product!</div>
+import SiteLayout from '../components/SiteLayout'
+
+export default () =>
+  <div>
+    <SiteLayout title="Product" />
+    <div>Product!</div>
+  </div>
