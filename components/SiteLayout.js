@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import Header from './Header'
 
-export default (props) =>
+export default ({ title, children }) =>
   <div>
     <Head>
-      <title>{props.title}</title>
+      <title>{title}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Header />
+    {children}
     <style global jsx>{`
       body {
         margin: 0;
