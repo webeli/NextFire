@@ -6,6 +6,7 @@ export default () =>
     <HeaderMenu />
     <style jsx>{`
       header {
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
         background: #1a171b;
         color: white;
         height: 50px;
