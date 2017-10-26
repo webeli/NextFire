@@ -1,6 +1,6 @@
 import SiteLayout from '../components/SiteLayout'
 
 export default () =>
-  <SiteLayout title="Categories">
-    <div>Categories!</div>
+  <SiteLayout title="Category">
+    <div>Category!</div>
   </SiteLayout>
