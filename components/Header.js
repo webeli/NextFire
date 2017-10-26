@@ -1,8 +1,11 @@
 import HeaderMenu from './HeaderMenu'
 
-export default () =>
+export default (props) =>
   <div>
-    <header>Header</header>
+    <header>
+      <span onClick={() => props.toggleDrawer()}>DrawerIcon</span>
+      <span>Header</span>
+    </header>
     <HeaderMenu />
     <style jsx>{`
       header {
