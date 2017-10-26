@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import thunkMiddleware from 'redux-thunk'
+import thunk from 'redux-thunk'
 
 const initialState = {
   drawerOpen: false,
@@ -26,5 +26,5 @@ export const toggleDrawer = (isServer) => dispatch => {
 }
 
 export const initStore = (initialState = initialState) => {
-  return createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
+  return createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunk)))
 }
