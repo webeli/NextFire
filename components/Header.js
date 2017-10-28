@@ -1,16 +1,19 @@
 import HeaderMenu from './HeaderMenu'
-import MenuIcon from '../assets/svg/md-menu.svg'
+import DrawerIcon from '../assets/svg/md-menu.svg'
+import CartIcon from '../assets/svg/md-cart.svg'
 
 export default (props) =>
   <div>
     <header>
-      <MenuIcon style={{ height: 50, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleDrawer()} />
+      <DrawerIcon style={{ height: 50, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleDrawer()} />
       <span>Header</span>
+      <CartIcon style={{ height: 50, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleCart()} />
     </header>
     <HeaderMenu />
     <style jsx>{`
       header {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         background: #1a171b;
         color: white;
