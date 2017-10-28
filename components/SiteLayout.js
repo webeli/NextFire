@@ -1,11 +1,11 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { initStore, toggleDrawer } from '../store'
+import { toggleDrawer, toggleCart } from '../store'
 import { connect } from 'react-redux'
 import Head from 'next/head'
 import Header from './Header'
 import Drawer from './Drawer'
-import Overlay from './Overlay'
+import Cart from './Cart'
 
 class SiteLayout extends React.Component {
   render() {
@@ -16,8 +16,8 @@ class SiteLayout extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <Drawer toggleDrawer={() => this.props.toggleDrawer()} open={this.props.drawerOpen} />
-        <Overlay onClick={() => this.props.toggleDrawer()} open={this.props.drawerOpen} />
-        <Header toggleDrawer={() => this.props.toggleDrawer()} />
+        <Cart toggleCart={() => this.props.toggleCart()} open={this.props.cartOpen} />
+        <Header toggleDrawer={() => this.props.toggleDrawer()} toggleCart={() => this.props.toggleCart()} />
         {this.props.children}
         <style global jsx>{`
         body {
@@ -33,13 +33,15 @@ class SiteLayout extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    drawerOpen: state.drawerOpen
+    drawerOpen: state.drawerOpen,
+    cartOpen: state.cartOpen
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleDrawer: bindActionCreators(toggleDrawer, dispatch),
+    toggleCart: bindActionCreators(toggleCart, dispatch),
   }
 }
 
