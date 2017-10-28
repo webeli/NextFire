@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Head from 'next/head'
 import Header from './Header'
 import Drawer from './Drawer'
+import Overlay from './Overlay'
 
 class SiteLayout extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class SiteLayout extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <Drawer toggleDrawer={() => this.props.toggleDrawer()} open={this.props.drawerOpen} />
+        <Overlay onClick={() => this.props.toggleDrawer()} open={this.props.drawerOpen} />
         <Header toggleDrawer={() => this.props.toggleDrawer()} />
         {this.props.children}
         <style global jsx>{`
