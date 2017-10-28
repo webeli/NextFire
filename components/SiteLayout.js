@@ -19,6 +19,7 @@ class SiteLayout extends React.Component {
         {this.props.children}
         <style global jsx>{`
         body {
+          font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
           margin: 0;
           padding: 0;
         }
