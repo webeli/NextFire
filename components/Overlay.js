@@ -2,9 +2,9 @@ import Close from '../assets/svg/md-close.svg'
 import classnames from 'classnames';
 
 export default (props) =>
-  <div>
-    <div className={classnames('overlay', { open: props.open })} onClick={() => props.onClick()}/>
-    <style jsx>{`
+    <div>
+        <div className={classnames('overlay', { open: props.open })} onClick={() => props.onClick()} />
+        <style jsx>{`
       .overlay {
         position: fixed;
         height: 0;
@@ -20,4 +20,4 @@ export default (props) =>
         margin-left: 0vw;
       }
   `}</style>
-  </div>
+    </div>
