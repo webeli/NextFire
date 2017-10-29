@@ -5,9 +5,9 @@ import CartIcon from '../assets/svg/md-cart.svg'
 export default (props) =>
   <div>
     <header>
-      <DrawerIcon style={{ height: 50, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleDrawer()} />
-      <span>Header</span>
-      <CartIcon style={{ height: 50, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleCart()} />
+      <DrawerIcon style={{ padding: 5, height: 40, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleDrawer()} />
+      <span>Store</span>
+      <CartIcon style={{ padding: 5, height: 40, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleCart()} />
     </header>
     <HeaderMenu />
     <style jsx>{`
