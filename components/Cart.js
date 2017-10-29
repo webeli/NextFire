@@ -8,7 +8,7 @@ export default (props) =>
     <div className={classnames('cart', { open: props.open })}>
       <header>
         Cart
-        <Close style={{ float: 'right', height: 50, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleCart()} />
+        <Close style={{ float: 'right', padding: 5, height: 40, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleCart()} />
       </header>
       {props.children}
     </div>
@@ -24,8 +24,8 @@ export default (props) =>
       .cart {
         position: fixed;
         height: 100vh;
-        width: 85vw;
-        right: -95vw;
+        width: calc(100vw - 50px);
+        right: -100vw;
         background: #FFF;
         box-shadow: 1px 0px 50px 0px #000
         z-index: 5;
