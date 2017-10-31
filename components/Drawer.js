@@ -7,8 +7,8 @@ export default (props) =>
     <Overlay onClick={() => props.toggleDrawer()} open={props.open} />
     <div className={classnames('drawer', { open: props.open })}>
       <header>
-        <Close style={{ padding: 5, height: 40, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleDrawer()}/>
-        Drawer
+        <Close style={{ padding: 10, height: 30, fill: 'currentColor' }} onClick={() => props.toggleDrawer()}/>
+        <span>Meny</span>
       </header>
       {props.children}
     </div>
@@ -16,9 +16,9 @@ export default (props) =>
       header {
         display: flex;
         align-items: center;
-        background: #1a171b;
-        color: white;
+        background: #FFF;
         height: 50px;
+        box-shadow: 0px 2px 5px #f7f7f7;
       }
       .drawer {
         position: fixed;
@@ -26,7 +26,7 @@ export default (props) =>
         width: calc(100vw - 50px);
         left: -100vw;
         background: #FFF;
-        box-shadow: 1px 0px 50px 0px #000
+        box-shadow: 0px 1px 3px 0px #000;
         z-index: 5;
         transition: left .3s;
       }

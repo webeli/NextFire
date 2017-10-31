@@ -7,8 +7,8 @@ export default (props) =>
     <Overlay onClick={() => props.toggleCart()} open={props.open} />
     <div className={classnames('cart', { open: props.open })}>
       <header>
-        Cart
-        <Close style={{ float: 'right', padding: 5, height: 40, color: '#FFF', fill: 'currentColor' }} onClick={() => props.toggleCart()} />
+        Kundvagn
+        <Close style={{ float: 'right', padding: 10, height: 30, fill: 'currentColor' }} onClick={() => props.toggleCart()} />
       </header>
       {props.children}
     </div>
@@ -17,9 +17,9 @@ export default (props) =>
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        background: #1a171b;
-        color: white;
+        background: #FFF;
         height: 50px;
+        box-shadow: 0px 2px 5px #f7f7f7;
       }
       .cart {
         position: fixed;
