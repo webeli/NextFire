@@ -6,6 +6,7 @@ import Head from 'next/head'
 import Header from './Header'
 import Drawer from './Drawer'
 import Cart from './Cart'
+import 'isomorphic-fetch'
 
 class SiteLayout extends React.Component {
   render() {
@@ -15,7 +16,13 @@ class SiteLayout extends React.Component {
           <title>{this.props.title}</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <Drawer toggleDrawer={() => this.props.toggleDrawer()} open={this.props.drawerOpen} />
+        <Drawer toggleDrawer={() => this.props.toggleDrawer()} open={this.props.drawerOpen}>
+          <ul>
+            {Object.keys(this.props.categories).map(cat => (
+              <li key={cat}>{cat}</li>
+            ))}
+          </ul>
+        </Drawer>
         <Cart toggleCart={() => this.props.toggleCart()} open={this.props.cartOpen} />
         <Header toggleDrawer={() => this.props.toggleDrawer()} toggleCart={() => this.props.toggleCart()} />
         {this.props.children}
