@@ -2,18 +2,18 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
-const initialState = {
+const initState = {
   drawerOpen: false,
-  cartOpen: false,
+  cartOpen: false
 }
 
 export const actionTypes = {
   TOGGLE_DRAWER: 'TOGGLE_DRAWER',
-  TOGGLE_CART: 'TOGGLE_CART',
+  TOGGLE_CART: 'TOGGLE_CART'
 }
 
 // REDUCERS
-export const reducer = (state = initialState, action) => {
+export const reducer = (state = initState, action) => {
   switch (action.type) {
     case actionTypes.TOGGLE_DRAWER:
       return Object.assign({}, state, {
@@ -27,14 +27,8 @@ export const reducer = (state = initialState, action) => {
   }
 }
 
-export const toggleDrawer = (isServer) => dispatch => {
-  return dispatch({ type: actionTypes.TOGGLE_DRAWER })
-}
+export const toggleDrawer = isServer => dispatch => dispatch({ type: actionTypes.TOGGLE_DRAWER })
 
-export const toggleCart = (isServer) => dispatch => {
-  return dispatch({ type: actionTypes.TOGGLE_CART })
-}
+export const toggleCart = isServer => dispatch => dispatch({ type: actionTypes.TOGGLE_CART })
 
-export const initStore = (initialState = initialState) => {
-  return createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunk)))
-}
+export const initStore = (initialState = initState) => createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunk)))
