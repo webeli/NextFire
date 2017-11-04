@@ -1,0 +1,10 @@
+{
+  "extends": ["standard", "standard-react"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "space-before-function-paren": ["error", "never"]
+  },
+  "globals": {
+    "fetch": true
+  }
+}
