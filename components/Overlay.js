@@ -1,9 +1,10 @@
-import Close from '../assets/svg/md-close.svg'
-import classnames from 'classnames';
+import React from 'react'
+import classnames from 'classnames'
+import PropTypes from 'prop-types'
 
-export default (props) =>
+const Overlay = ({ open, onClick }) => (
   <div>
-    <div className={classnames('overlay', { open: props.open })} onClick={() => props.onClick()} />
+    <div className={classnames('overlay', { open: open })} onClick={() => onClick()} />
     <style jsx>{`
       .overlay {
         position: fixed;
@@ -19,5 +20,14 @@ export default (props) =>
         height: 100vh;
         width: 100vw;
       }
-  `}</style>
+    `}
+    </style>
   </div>
+)
+
+Overlay.propTypes = {
+  open: PropTypes.bool,
+  onClick: PropTypes.func
+}
+
+export default Overlay
