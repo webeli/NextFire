@@ -1,16 +1,18 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import Close from '../assets/svg/md-close.svg'
 import Overlay from './Overlay'
-import classnames from 'classnames';
+import classnames from 'classnames'
 
-export default (props) =>
+const Drawer = ({ toggleDrawer, open, children }) => (
   <div>
-    <Overlay onClick={() => props.toggleDrawer()} open={props.open} />
-    <div className={classnames('drawer', { open: props.open })}>
+    <Overlay onClick={() => toggleDrawer()} open={open} />
+    <div className={classnames('drawer', { open: open })}>
       <header>
-        <Close style={{ padding: 10, height: 30, fill: 'currentColor' }} onClick={() => props.toggleDrawer()}/>
+        <Close style={{ padding: 10, height: 30, fill: 'currentColor' }} onClick={() => toggleDrawer()} />
         <span>Meny</span>
       </header>
-      {props.children}
+      {children}
     </div>
     <style jsx>{`
       header {
@@ -33,5 +35,15 @@ export default (props) =>
       .open {
         left: 0vw;
       }
-  `}</style>
+    `}
+    </style>
   </div>
+)
+
+Drawer.propTypes = {
+  toggleDrawer: PropTypes.func,
+  open: PropTypes.bool,
+  children: PropTypes.node
+}
+
+export default Drawer
