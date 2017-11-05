@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Close from '../assets/svg/md-close.svg'
+import Icon from './Icon'
 import Overlay from './Overlay'
 import classnames from 'classnames'
 
@@ -9,7 +9,7 @@ const Drawer = ({ toggleDrawer, open, children }) => (
     <Overlay onClick={() => toggleDrawer()} open={open} />
     <div className={classnames('drawer', { open: open })}>
       <header>
-        <Close style={{ padding: 10, height: 30, fill: 'currentColor' }} onClick={() => toggleDrawer()} />
+        <Icon name='close' onClick={() => toggleDrawer()} />
         <span>Meny</span>
       </header>
       {children}
