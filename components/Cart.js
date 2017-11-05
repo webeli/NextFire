@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Close from '../assets/svg/md-close.svg'
+import Icon from './Icon'
 import Overlay from './Overlay'
 import classnames from 'classnames'
 
@@ -10,9 +10,7 @@ const Cart = ({ toggleCart, open, children }) => (
     <div className={classnames('cart', { open: open })}>
       <header>
         Kundvagn
-        <Close style={{
-          float: 'right', padding: 10, height: 30, fill: 'currentColor'
-        }} onClick={() => toggleCart()} />
+        <Icon name='close' onClick={() => toggleCart()} />
       </header>
       {children}
     </div>
