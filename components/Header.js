@@ -1,18 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import DrawerIcon from '../assets/svg/md-menu.svg'
-import CartIcon from '../assets/svg/md-cart.svg'
+import Icon from './Icon'
 
 const Header = ({ toggleDrawer, toggleCart }) => (
   <div>
     <header>
-      <DrawerIcon style={{
-        padding: 10, height: 30, color: '#FFF', fill: 'currentColor', background: '#000'
-      }} onClick={() => toggleDrawer()} />
+      <Icon name='drawer' style={{color: '#FFF', background: '#000'}} onClick={() => toggleDrawer()} />
       <span>Skokung</span>
-      <CartIcon style={{
-        padding: 10, height: 30, color: '#FFF', fill: 'currentColor', background: '#000'
-      }} onClick={() => toggleCart()} />
+      <Icon name='cart' style={{color: '#FFF', background: '#000'}} onClick={() => toggleCart()} />
     </header>
     <style jsx>{`
       header {
