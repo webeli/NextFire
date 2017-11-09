@@ -31,8 +31,8 @@ class SiteLayout extends React.Component {
         <Drawer toggleDrawer={() => toggleDrawer()} open={drawerOpen}>
           <ul>
             {!!page.categories && Object.keys(page.categories).map(cat => (
-              <li key={cat}>
-                <Link prefetch href={`/category?c=${cat}`}><span>{cat}</span></Link>
+              <li key={cat} onClick={() => toggleDrawer()}>
+                <Link prefetch href={{ pathname: '/category', query: { selected: cat } }}><span>{cat}</span></Link>
               </li>
             ))}
           </ul>
