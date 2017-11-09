@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import Link from 'next/link'
 import { bindActionCreators } from 'redux'
 import { toggleDrawer, toggleCart } from '../store'
 import { connect } from 'react-redux'
@@ -6,13 +8,12 @@ import Head from 'next/head'
 import Header from './Header'
 import Drawer from './Drawer'
 import Cart from './Cart'
-import PropTypes from 'prop-types'
 import 'isomorphic-fetch'
 
 class SiteLayout extends React.Component {
   render() {
     const {
-      currentPage,
+      page,
       title,
       toggleDrawer,
       drawerOpen,
@@ -29,8 +30,10 @@ class SiteLayout extends React.Component {
         </Head>
         <Drawer toggleDrawer={() => toggleDrawer()} open={drawerOpen}>
           <ul>
-            {!!currentPage.categories && Object.keys(currentPage.categories).map(cat => (
-              <li key={cat}>{cat}</li>
+            {!!page.categories && Object.keys(page.categories).map(cat => (
+              <li key={cat}>
+                <Link prefetch href={`/category?c=${cat}`}><span>{cat}</span></Link>
+              </li>
             ))}
           </ul>
         </Drawer>
@@ -51,7 +54,7 @@ class SiteLayout extends React.Component {
 }
 
 SiteLayout.propTypes = {
-  currentPage: PropTypes.any,
+  page: PropTypes.any,
   title: PropTypes.string,
   toggleDrawer: PropTypes.func,
   toggleCart: PropTypes.func,
