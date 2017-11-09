@@ -12,7 +12,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <SiteLayout title='Home' currentPage={this.props}>
+      <SiteLayout title='Home' page={this.props}>
         <div>Welcome to next.js!</div>
       </SiteLayout>
     )
