@@ -14,7 +14,7 @@ class Category extends React.Component {
   render() {
     return (
       <SiteLayout title='Category' page={this.props}>
-        <div>Category! {this.props.url.query.c}</div>
+        <div>Category! {this.props.url.query.selected}</div>
       </SiteLayout>
     )
   }
